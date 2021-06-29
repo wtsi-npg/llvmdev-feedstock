@@ -52,6 +52,7 @@ outputs:
         - cmake
         - ninja     # [win]
         - python    >=3
+        - make
       host:
         - {{ pin_subpackage("libllvm" + major_ver, exact=True) }}
         - {{ pin_subpackage("llvm-tools", exact=True) }}
@@ -80,6 +81,7 @@ outputs:
         - {{ compiler('cxx') }}    # [not (osx or win)]
         - cmake                    # [not win]
         - python    >=3            # [not win]
+        - make
       host:
       run:
         - libcxx >={{ cxx_compiler_version }}  # [osx]
@@ -96,6 +98,7 @@ outputs:
         - {{ pin_subpackage("libllvm" + major_ver, exact=True) }}  # [not win]
     requirements:
       build:
+        - make
       host:
         - {{ pin_subpackage("libllvm" + major_ver, exact=True) }}  # [not win]
       run:                                                         # [not win]
@@ -119,6 +122,7 @@ outputs:
         - cmake
         - ninja     # [win]
         - python    >=3
+        - make
       host:
         - {{ pin_subpackage("libllvm" + major_ver, exact=True) }}
       run:
@@ -162,6 +166,7 @@ outputs:
         - cmake
         - ninja     # [win]
         - python    >=3
+        - make
       host:
         - {{ pin_subpackage("llvmdev", exact=True) }}
       run_constrained:
